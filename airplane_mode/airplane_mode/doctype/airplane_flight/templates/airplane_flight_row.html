@@ -1,0 +1,30 @@
+<!-- <div>
+	<a href="{{ doc.route }}">{{ doc.title or doc.name }}</a>
+</div> -->
+<!-- this is a sample default list template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.list-item{
+			border: 1px gray solid;
+			width: 100%;
+			height: 140px;
+			margin: 20px;
+			padding:10px;
+		}
+		.id{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+    <div class="list-item",style="background-color :red"> 
+		<h5 class="id">{{ doc.airplane }}</h5>
+		<h6>{{ doc.source_airport }} - {{destination}}</h6>
+		<h6>{{ doc.date_of_departure }} | {{ doc.time_of_departure }} | {{ doc.duration }}</h6>
+		<a href="{{ doc.route }}" style="color:blue">Detail</a>
+	</div>
+	
+</body>
+</html>

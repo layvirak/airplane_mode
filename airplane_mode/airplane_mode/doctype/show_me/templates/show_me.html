@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Rectangle</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/frappe-charts/dist/frappe-charts.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/frappe-charts/dist/frappe-charts.min.iife.js"></script>
+    <style>
+        #colorRectangle {
+            width: 200px;
+            height: 100px;
+            margin: 50px auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorRectangle"></div>
+
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Function to set color of rectangle based on query parameter
+        function setColor() {
+            var color = getParameterByName('color');
+            if (color) {
+                document.getElementById('colorRectangle').style.backgroundColor = color;
+            }
+        }
+
+        // Call the setColor function when the page loads
+        window.onload = setColor;
+    </script>
+</body>
+</html>
